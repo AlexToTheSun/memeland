@@ -4,8 +4,9 @@
 Материалы
 - Как [изменить версию python3](https://habr.com/ru/articles/686186/) на Ubuntu
 - [Скрипт MemeLand](https://github.com/nazavod777/memeland_auto_reger)
-```
+
 # Установим python версии 3.11.6
+```
 sudo apt update && sudo apt upgrade -y
 sudo apt-get install build-essential checkinstall
 sudo apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev \
@@ -39,8 +40,9 @@ python3.11 -m pip install --upgrade pip
 # Скажем что python3 это python
 apt-get install python-is-python3
 python --version
-
-# Теперь перейдем к самому скрипту
+```
+# Теперь перейдем к настройке самого скрипта
+```
 cd
 # sudo wget https://github.com/nazavod777/memeland_auto_reger/archive/refs/heads/main.zip && unzip /root/main.zip
 git clone https://github.com/nazavod777/memeland_auto_reger
@@ -55,4 +57,21 @@ nano config.py
 
 # запускаем
 python main.py
+```
+# Запуск
+Мы можем просто запустить скрипт в tmux `python main.py` А можем более интересным способом:
+
+Запускаем скрипт meme в фоновом режиме и с записью в лог файл
+```
+nohup python main.py 2 1 2>&1 1>/root/memeland_auto_reger/log_file.log 2>&1 &
+```
+Затем запускаем скрипт для отправки всех ошибок в телеграм
+```
+cd && wget -O /usr/local/bin/meme_alerting https://raw.githubusercontent.com/AlexToTheSun/memeland/main/meme_alerting.sh && chmod +x /usr/local/bin/meme_alerting
+meme_alerting > /dev/null 2>&1 &
+```
+Отменить выполнение
+```
+pgrep -a <имя>
+kill <номер>
 ```
