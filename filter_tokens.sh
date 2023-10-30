@@ -6,7 +6,7 @@ registred_acc=${file_path}/registered.txt
 emty_acc=${file_path}/empty_attempts.txt
 
 #filter registred_acc
-cat $registred_acc | cut -f 1 -d ; > ${file_path}/filter_registered.txt
+cat $registred_acc | cut -f 1 -d ';' > ${file_path}/filter_registered.txt
 filter_registred_acc=${file_path}/filter_registered.txt
 
 #filter vs 2 files
