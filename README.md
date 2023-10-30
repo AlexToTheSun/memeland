@@ -75,3 +75,9 @@ meme_alerting > /dev/null 2>&1 &
 pgrep -a <имя>
 kill <номер>
 ```
+
+## Фильтрация токенов твиттера
+```
+cd && wget -O /usr/local/bin/filter_tokens https://raw.githubusercontent.com/AlexToTheSun/memeland/main/filter_tokens.sh && chmod +x /usr/local/bin/filter_tokens
+filter_tokens
+```
