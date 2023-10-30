@@ -1,6 +1,6 @@
 #!/bin/bash
 # vars
-read -p -r 'Path to needed folder. Example "/root/100accs": ' file_path
+read -p 'Path to needed folder. Example "/root/100accs": ' file_path
 all_acc=${file_path}/accounts.txt
 registred_acc=${file_path}/registered.txt
 emty_acc=${file_path}/empty_attempts.txt
