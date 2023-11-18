@@ -3,9 +3,10 @@
 
 Материалы
 - Как [изменить версию python3](https://habr.com/ru/articles/686186/) на Ubuntu
+- [Версии python и виртуальное окружение](https://firstvds.ru/technology/ustanovka-python-39-i-virtualnogo-okruzheniya-venv) для python проектов 
 - [Скрипт MemeLand](https://github.com/nazavod777/memeland_auto_reger)
 
-# Установим python версии 3.11.6
+# Установим python версии 3.11.6 и 
 ```
 sudo apt update && sudo apt upgrade -y
 sudo apt-get install build-essential checkinstall
@@ -20,6 +21,14 @@ cd Python-3.11.6
 sudo ./configure -enable-optimizations
 sudo make altinstall
 
+# так же установим версию 3.10
+cd /opt
+sudo wget https://www.python.org/ftp/python/3.10.13/Python-3.10.13.tgz
+sudo tar xzf Python-3.10.13.tgz
+cd Python-3.10.13
+sudo ./configure -enable-optimizations
+sudo make altinstall
+
 # sudo apt-get install cmake build-essential git libmicrohttpd-dev \
 # libssl-dev libhwloc-dev
 
@@ -29,9 +38,11 @@ ls
 
 update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
 update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.11 2
+update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.10 3
 
 # Проверим список версий  и выбор нужной:
 update-alternatives --list python3
+update-alternatives --config python3
 
 # установка pip
 apt install python3-pip
