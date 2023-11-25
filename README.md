@@ -29,6 +29,14 @@ cd Python-3.10.13
 sudo ./configure -enable-optimizations
 sudo make altinstall
 
+# установим версию 3.9
+cd /opt
+sudo wget https://www.python.org/ftp/python/3.9.18/Python-3.9.18.tgz
+sudo tar xzf Python-3.9.18.tgz
+cd Python-3.9.18
+sudo ./configure -enable-optimizations
+sudo make altinstall
+
 # sudo apt-get install cmake build-essential git libmicrohttpd-dev \
 # libssl-dev libhwloc-dev
 
@@ -39,6 +47,7 @@ ls
 update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
 update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.11 2
 update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.10 3
+update-alternatives --install /usr/bin/python3 python3 /usr/local/bin/python3.9 4
 
 # Проверим список версий  и выбор нужной:
 update-alternatives --list python3
